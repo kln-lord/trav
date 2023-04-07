@@ -467,7 +467,7 @@ h4{
                                 class="fa fa-question-circle"></i><span class="hide-menu">404</span></a>
                     </li>
                     @else
-                    <li> <a class="waves-effect waves-dark" href="http://localhost:8000/dashboard" aria-expanded="false"><i
+                    <li> <a class="waves-effect waves-dark" href="dashboard" aria-expanded="false"><i
                         class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>
                     </li>
                     <li> <a class="waves-effect waves-dark" href="profile" aria-expanded="false"><i
@@ -520,7 +520,7 @@ h4{
                     <div class="col-md-5 align-self-center">
                         <h3 class="text-themecolor">Profile</h3>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="http://localhost:8000/home">Home</a></li>
+                            <li class="breadcrumb-item"><a href="home">Home</a></li>
                             <li class="breadcrumb-item active">Profile</li>
                         </ol>
                     </div>

@@ -160,7 +160,7 @@
                 <!-- Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="http://localhost:8000/dashboard">
+                    <a class="navbar-brand" href="dashboard">
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
@@ -230,7 +230,7 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li> <a class="waves-effect waves-dark" href="http://localhost:8000/dashboard" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="dashboard" aria-expanded="false"><i
                                     class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>
                         </li>
                         <li> <a class="waves-effect waves-dark" href="profile" aria-expanded="false"><i
@@ -281,7 +281,7 @@
                     <div class="col-md-5 align-self-center">
                         <h3 class="text-themecolor">Dashboard</h3>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="http://localhost:8000/home">Home</a></li>
+                            <li class="breadcrumb-item"><a href="home">Home</a></li>
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
                     </div>
@@ -329,7 +329,7 @@
                                                     <div class="your-balance"><i style="scale: 1.8;" class="fa fa-credit-card" aria-hidden="true"></i></div>
                                                     </div>
                                                     <div class="row align-items-center mb-2 d-flex">
-                                                            <div class = "amount">{{$balance}}<br><div style="color:gray ; font-size:0.9rem;">Balance<button class="deposit-btn" onclick='window.location.replace("http://localhost:8000/deposit-form");'>Deposit</button></div></div>
+                                                            <div class = "amount">{{$balance}}<br><div style="color:gray ; font-size:0.9rem;">Balance<button class="deposit-btn" onclick='window.location.replace("deposit-form");'>Deposit</button></div></div>
                                                         <div class="col-4 text-right">
                                                         </div>
                                                     </div>

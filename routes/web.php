@@ -161,6 +161,10 @@ Route::get('/buttonsPage',function(){
     }else return view('home');
  });
 
+ Route::get('/email_verification',function(){
+    return view('verify');
+ });
+
 Route::post('/update_profile',[App\Http\Controllers\UpdateController::class, 'checkMethod']);
 
 Route::post('/delete_account',[App\Http\Controllers\UpdateController::class, 'deleteMethod']);
@@ -195,20 +199,20 @@ Route::post('/flightsSearch', [App\Http\Controllers\FlightsApiController::class,
 
 
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/profile', [App\Http\Controllers\UpdateController::class, 'index'])->name('profile');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/checkout', [App\Http\Controllers\CartItemsController::class, 'index'])->name('checkout');
 
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

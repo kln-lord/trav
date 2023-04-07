@@ -3151,7 +3151,7 @@ content:'\f1cb';
                         <input type="text" placeholder=" ">
                         <div>
                             <svg>
-                                <use xlink:href="#path">
+                            <use xlink:href="#path">
                             </svg>
                         </div>
                     </div>
@@ -3188,22 +3188,22 @@ content:'\f1cb';
                         <li id="Acc">{{Auth::user()->username}}
                             <ul class="drop">
                                 <div>
-                                <li class="lg" id="lg" onclick="window.location.replace('http://localhost:8000/dashboard')">Settings</li>
-                                <li class="rg" id="rg" onclick="window.location.replace('http://localhost:8000/logout')">Logout</li>
+                                <li class="lg" id="lg" onclick="window.location.replace('dashboard')">Settings</li>
+                                <li class="rg" id="rg" onclick="window.location.replace('logout')">Logout</li>
                                 </div>
                             </ul>
                             </li>
                         @endauth
                         </ul>
                         @auth
-                        <i onclick="window.location.replace('http://localhost:8000/checkout')" style="position:absolute;color: white;margin-left:900px;margin-top:-23px !important;scale:1.5;cursor: pointer;" class="fa fa-shopping-cart"></i><div style="text-align:center; font-size:0.5rem;position: absolute;height : 11px;width : 11px;border-radius:50%;background-color:#ff0759;margin-left:910px;margin-top:-26px !important;color:white;cursor: pointer;" class="notis">  {{$number_of_items_in_cart}}</div>
+                        <i onclick="window.location.replace('checkout')" style="position:absolute;color: white;margin-left:900px;margin-top:-23px !important;scale:1.5;cursor: pointer;" class="fa fa-shopping-cart"></i><div style="text-align:center; font-size:0.5rem;position: absolute;height : 11px;width : 11px;border-radius:50%;background-color:#ff0759;margin-left:910px;margin-top:-26px !important;color:white;cursor: pointer;" class="notis">  {{$number_of_items_in_cart}}</div>
                         @endauth
                     </nav>
             </div>
 
 
         </header>
-
+        <button data-tf-popup="FmRh6SUY" data-tf-opacity="100" data-tf-size="100" data-tf-iframe-props="title=Product Review Form Template (copy)" data-tf-transitive-search-params data-tf-medium="snippet" style="all:unset;font-family:Helvetica,Arial,sans-serif;display:inline-block;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background-color:#0445AF;color:#fff;font-size:20px;border-radius:25px;padding:0 33px;font-weight:bold;height:50px;cursor:pointer;line-height:50px;text-align:center;margin:0;text-decoration:none;">Try me!</button><script src="//embed.typeform.com/next/embed.js"></script>
         <!--login & register-->
         <div class="loginWin" id="loginWin">
         <div class="screen1" id = "screen1">

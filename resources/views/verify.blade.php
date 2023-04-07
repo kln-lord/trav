@@ -8,7 +8,7 @@
 		<meta name="keywords" content="password strength, visual feedback, image, canvas, javascript, css, blur, pixelated" />
 		<meta name="author" content="Codrops" />
         <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/logo-icon1.png">
-		<link rel="stylesheet" type="text/css" href="css/baseRegisterTest.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/baseRegisterTest.css" />
 		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
 	</head>
     <style>
@@ -40,65 +40,47 @@
                 height:50px; object-fit: cover; scale:0.8;"/>
             </div>
 			<div style = "margin-top:-200px !important"  class="content content--side">
-                @include('flash-message')
-				<form class="form" action="{{ route('register') }}" method="POST">
+				<form class="form" action="{{ route('login') }}" method="POST">
                     @csrf
+
+                    <div class="card-body">
+                        @if (session('resent'))
 					<div class="form__item">
-						<label class="form__label" for="email">Username</label>
-						<input class="form__input" type="text" name="username" id="name" onfocus="document.getElementById('invalid1').style.display = 'none'" value="{{ old('username') }}" required>
+						<label class="form__label">Verify Your Email Address</label>
+                        <label class="form__label">A fresh verification link has been sent to your email address.</label>
                         <br>
-                        @error('name')
-                                    <span id="invalid1" class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
+                    @endif
+
+                    {{ __('Before proceeding, please check your email for a verification link.') }}
+                    {{ __('If you did not receive the email') }}
+
 					</div>
 
-					<div class="form__item">
-						<label class="form__label" for="email">Email Address</label>
-						<input class="form__input" type="email" name="email" id="email" onfocus="document.getElementById('invalid2').style.display = 'none'" value="{{ old('email') }}" required>
-                        <br>
-
-                        @error('email')
-                                    <span id="invalid2" class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
-					</div>
-
-					<div class="form__item">
-						<label class="form__label" for="password">Password</label>
-						<div class="form__input-wrap">
-							<input class="form__input" type="password" name="password" id="password" onfocus="document.getElementById('invalid3').style.display = 'none'" required>
-							<p style = "margin-top:0px" class="form__password-strength" id="strength-output"></p>
-                            @error('password')
-                                    <span id="invalid3" class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                            @enderror
-						</div>
-					</div>
                     <br>
 
-                    <div class="form__item">
+                    <br>
+
+
+
+                    {{-- <div class="form__item">
 						<label class="form__label" for="password">Password</label>
 						<div class="form__input-wrap">
 							<input class="form__input" type="password" name="password_confirmation" id="password-confirm" required>
 							<p  class="form__password-strength" id="strength-output"></p>
 						</div>
-					</div>
+					</div> --}}
 					<div class="form__item form__item--actions">
-						<span>Already have an account? <a class="form__link" href="login_user">Login here</a></span>
-						<input class="form__button" type="submit" name="signup" value="Signup">
+                        <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
+                            @csrf
+                            <button type="submit" class="form__button">{{ __('click here to request another') }}</button>.
+                        </form>
 					</div>
 				</form>
-                @yield('content')
-
 			</div>
 			<div class="content content--side">
-				<div class="poster" style="background-image:url(images/madrid1.jpg)"></div>
+				<div class="poster" style="background-image:url(images/login.jpg)"></div>
 				<div class="canvas-wrap">
-					<canvas></canvas>
+					{{-- <canvas></canvas> --}}
 				</div>
 				{{-- <nav class="demos">
 					<a class="demo demo--current" href="index.html"><span>Demo 1</span></a>
@@ -109,6 +91,6 @@
 		</main>
 		<script src="js/imagesloaded.pkgd.min.js"></script>
 		<script src="js/zxcvbn.js"></script>
-		<script src="js/demo1.js"></script>
+		<script src="js/demo2.js"></script>
 	</body>
 </html>
